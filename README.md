@@ -53,9 +53,11 @@ Usage
 =====
 
 Access to the DjangoAdminDialog application.
+
 ![app](https://raw.github.com/quiqueporta/django-admin-dialog/master/app.png)
 
 In this form you indicate the url on which you want to show the modal dialog boxes and the field id.
+
 ![admin_form](https://raw.github.com/quiqueporta/django-admin-dialog/master/admin_form.png)
 
 If you want to know the name of the form fields, you can set this setting variable:
@@ -64,13 +66,16 @@ If you want to know the name of the form fields, you can set this setting variab
 DJANGO_ADMIN_DIALOG_SHOW_IDS = True
 ```
 Now if you access to your model form, you can see the field id's next to them.
+
 ![field_ids](https://raw.github.com/quiqueporta/django-admin-dialog/master/field_ids.png)
 
 
 When you access to your model admin form, you can see a new icon next to the field that you indicate previously.
+
 ![help_button](https://raw.github.com/quiqueporta/django-admin-dialog/master/help_button.png)
 
 And now you can click on this icon to show the dialog.
+
 ![help_dialog](https://raw.github.com/quiqueporta/django-admin-dialog/master/help_dialog.png)
 
 
