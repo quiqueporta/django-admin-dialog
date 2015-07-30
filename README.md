@@ -36,7 +36,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 Override the admin base template (`base.html`) and include this:
 
+```html
 {% include "django_admin_dialog/django_admin_dialog.html" %}
+```
 
 In your admin.py file, add this mixin for all your ModelAdmin's that you want to add the dialog:
 
