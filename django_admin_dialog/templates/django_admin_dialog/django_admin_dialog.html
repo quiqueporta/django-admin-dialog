@@ -1,0 +1,44 @@
+{% if django_admin_dialogs %}
+<script type='text/javascript'>
+// <![CDATA[
+(function($) {
+    $(document).ready(function($) {
+        {% for dialog in django_admin_dialogs %}
+
+            {% if request.user.is_superuser %}
+            $('#{{dialog.element_id|safe}}').after('&nbsp;&nbsp;<a href="{{ dialog.get_admin_url }}" target="_blank"><img id="{{dialog.element_id|safe}}_icon" src="/static/django_admin_dialog/images/pencil.png"></a>');
+            {% endif %}
+
+            $('#{{dialog.element_id|safe}}').after('&nbsp;&nbsp;<img id="{{dialog.element_id|safe}}_icon" src="/static/django_admin_dialog/images/information.png">');
+            $('#{{dialog.element_id|safe}}_dialog').dialog(
+                    {
+                        modal: true,
+                        autoOpen: false,
+                        closeOnEscape: true,
+                        title: "{{dialog.title|safe}}",
+                        width: {{dialog.width}},
+                        maxHeight: {{dialog.max_height}}
+                    }
+            );
+
+            $('#{{dialog.element_id|safe}}_icon').click(function() {
+                $('#{{dialog.element_id|safe}}_dialog').dialog('open');
+            }).hover(function() {
+                $(this).css('cursor','pointer');
+            });
+
+        {% endfor %}
+
+        {% if django_admin_dialog_show_ids %}
+        $(':input').each(function(){$(this).after('&nbsp;<small>'+$(this).attr('id')+'</small>&nbsp;')});
+        {% endif %}
+
+        });
+    })(django.jQuery);
+// ]]>
+</script>
+{% endif %}
+
+{% for dialog in django_admin_dialogs %}
+    <div id="{{dialog.element_id|safe}}_dialog" style="display: none">{{dialog.body|safe}}</div>
+{% endfor %}
