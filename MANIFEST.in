@@ -1,0 +1,2 @@
+recursive-include django_admin_dialog/templates *
+recursive-include django_admin_dialog/static *

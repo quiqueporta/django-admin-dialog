@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 from django_admin_dialog import get_version
 
@@ -14,7 +14,9 @@ setup(
     url='https://github.com/quiqueporta/django-admin-dialog',
     download_url='https://github.com/quiqueporta/django-admin-dialog/releases',
     keywords=['django', 'tools'],
-    packages=['django_admin_dialog'],
+    packages=find_packages(),
+    package_data={},
+    include_package_data=True,
     install_requires=['django', 'django-redactoreditor'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
