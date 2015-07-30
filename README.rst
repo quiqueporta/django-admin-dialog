@@ -55,7 +55,7 @@ And run the migrations:
 
 .. code-block:: bash
 
-    $ manage.py migrate django-admin-dialog
+    $ manage.py migrate django_admin_dialog
 
 Usage
 -----
