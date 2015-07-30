@@ -43,6 +43,8 @@ Override the admin base template (`base.html`) and include this:
 In your admin.py file, add this mixin for all your ModelAdmin's that you want to add the dialog:
 
 ```python
+from django_admin_dialog.mixins import DjangoAdminDialogMixin
+
 class MyModelAdmin(DjangoAdminDialogMixin, admin.ModelAdmin):
     ...
 ```
