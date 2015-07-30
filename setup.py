@@ -10,7 +10,7 @@ setup(
     author='Quique Porta',
     author_email='quiqueporta@gmail.com',
     description='Shows a dialog popup with helptext for the admin fields that you have indicated.',
-    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
     url='https://github.com/quiqueporta/django-admin-dialog',
     download_url='https://github.com/quiqueporta/django-admin-dialog/releases',
     keywords=['django', 'tools'],
