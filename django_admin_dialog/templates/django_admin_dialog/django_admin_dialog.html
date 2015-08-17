@@ -1,3 +1,4 @@
+{% load static %}
 {% if django_admin_dialogs %}
 <script type='text/javascript'>
 // <![CDATA[
@@ -6,10 +7,10 @@
         {% for dialog in django_admin_dialogs %}
 
             {% if request.user.is_superuser %}
-            $('#{{dialog.element_id|safe}}').after('&nbsp;&nbsp;<a href="{{ dialog.get_admin_url }}" target="_blank"><img id="{{dialog.element_id|safe}}_icon" src="{% static "django_admin_dialog/images/pencil.png" %}"></a>');
+            $('#{{dialog.element_id|safe}}').after('&nbsp;&nbsp;<a href="{{ dialog.get_admin_url }}" target="_blank"><img id="{{dialog.element_id|safe}}_icon" src="{% static 'django_admin_dialog/images/pencil.png' %}"></a>');
             {% endif %}
 
-            $('#{{dialog.element_id|safe}}').after('&nbsp;&nbsp;<img id="{{dialog.element_id|safe}}_icon" src="{% static "django_admin_dialog/images/information.png" %}">');
+            $('#{{dialog.element_id|safe}}').after('&nbsp;&nbsp;<img id="{{dialog.element_id|safe}}_icon" src="{% static 'django_admin_dialog/images/information.png' %}">');
             $('#{{dialog.element_id|safe}}_dialog').dialog(
                     {
                         modal: true,
