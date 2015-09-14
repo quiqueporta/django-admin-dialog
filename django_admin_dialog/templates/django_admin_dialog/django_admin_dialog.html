@@ -30,7 +30,7 @@
 
         {% endfor %}
 
-        {% if django_admin_dialog_show_ids %}
+        {% if django_admin_dialog_show_ids and request.user.is_superuser %}
         $(':input').each(function(){$(this).after('&nbsp;<small>'+$(this).attr('id')+'</small>&nbsp;')});
         {% endif %}
 
