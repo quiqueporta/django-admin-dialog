@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals, print_function
 
-VERSION = (1, 0, 7, 'final')
+VERSION = (1, 0, 8, 'final')
 __version__ = VERSION
 
 
